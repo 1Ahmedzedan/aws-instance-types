@@ -38,7 +38,7 @@ function Intro({onClick}){
       {
         introQuestion.map((i)=><Question question={i} key={i.id}/>)
       }
-      <button onClick={()=>onClick(false)}> You went compare between instance types ? </button>
+      <button onClick={()=>onClick(false)}> Compare between two instance types </button>
     </div>
   );
 }
