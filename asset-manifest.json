@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/aws-instance-types/static/css/main.be421261.css",
+    "main.js": "/aws-instance-types/static/js/main.194fee27.js",
+    "index.html": "/aws-instance-types/index.html",
+    "main.be421261.css.map": "/aws-instance-types/static/css/main.be421261.css.map",
+    "main.194fee27.js.map": "/aws-instance-types/static/js/main.194fee27.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.be421261.css",
+    "static/js/main.194fee27.js"
+  ]
+}
