@@ -325,3 +325,59 @@ header .home-icon{
 .btn-close:hover{
   background: orange;
 }
+
+table{
+  text-align: center;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table tr:nth-child(1){
+  background: #ff9900 !important;
+  font-weight: bold;
+}
+
+table tr:nth-child(odd){
+  background: whitesmoke;
+}
+
+table tr:nth-child(even){
+  background: coral;
+}
+
+.instance-list{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0 ; 
+  gap : 5px ; 
+  flex-wrap: wrap;
+  background: var(--color1);
+  width: 100%;
+}
+
+.instance-list li{
+  padding: 20px;
+  background-color: #ddd;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.instance-list li:hover , 
+.instance-list li.active{
+  background: whitesmoke;
+  border-bottom: 2px solid var(--color2);
+}
+
+.form-container .instance-title{
+  width: 100%;
+  font-size: 36px;
+  font-weight: bold;
+}

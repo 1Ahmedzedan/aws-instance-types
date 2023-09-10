@@ -93,11 +93,25 @@ function Compare({setError}){
     }
   }
 
+  function handleBack(){
+    setShowCompare(false) ; 
+    setType1("") ; 
+    setType2("") ; 
+  }
+
   return(
     <div className="form-container">
-      {showCompare && <img className="back" src="img/back-icon.png" alt="back" onClick={()=>setShowCompare(false)}/>}
+      {showCompare && <img className="back" src="img/back-icon.png" alt="back" onClick={handleBack}/>}
       {!showCompare && <CompareForm setType1={setType1} setType2={setType2} handleSubmit={handleSubmit}/>}
       {showCompare && <CompareTable type1={type1} type2={type2}/>}
+      {showCompare && 
+      <>
+        <p className="instance-title">{instanceType[type1]?.name} instances :</p>
+        <InstanceDetail type={type1} />
+        <p className="instance-title">{instanceType[type2]?.name} instances :</p>
+        <InstanceDetail type={type2} />
+      </>
+      }
     </div>
   );
 }
@@ -155,5 +169,34 @@ function CompareTable({type1 , type2}){
         </p>
       </div>
     </div>
+  );
+}
+
+function InstanceDetail({type}) {
+  const [instance , setInstance] = useState(instanceType[type].instanceTypes[0]) ; 
+  return(
+      <>
+          <ul className='instance-list'>
+              {
+                  instanceType[type].instanceTypes.map((i , index)=><li className={instance===i?"active" : ""} key={index} onClick={()=>setInstance(i)}>{i}</li>)
+              }
+          </ul>
+          {
+              instance && 
+              <table> 
+                  <tbody>
+                      {
+                          instanceType[type].instanceType_details[instance].map((tr , index)=>
+                              <tr key={index}>
+                                  {
+                                      tr.map((td , index)=><td key={index}>{td}</td>)
+                                  }        
+                              </tr>
+                          )
+                      }
+                  </tbody>
+              </table>
+          }
+      </>
   );
 }
